@@ -1,50 +1,97 @@
-# React + TypeScript + Vite
+# Rock-Paper-Scissors Game on Aptos Blockchain
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a decentralized Rock-Paper-Scissors game built on the Aptos blockchain using the Move programming language. The game allows users to play against each other or against a computer, with all game states stored on the blockchain. The user interface is developed with Vite and React, and the project integrates with Aptos wallets using the Aptos Wallet Adapter.
 
-Currently, two official plugins are available:
+## Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Features](#features)
+- [Technology Stack](#technology-stack)
+- [Smart Contract Overview](#smart-contract-overview)
+- [Installation](#installation)
+- [Usage](#usage)
+- [How to Play](#how-to-play)
+- [Acknowledgement](#acknowledgement)
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Play Rock-Paper-Scissors against another player or the computer.
+- All game moves and results are stored securely on the Aptos blockchain.
+- Randomized computer moves for a fair and unpredictable experience.
+- Simple and intuitive user interface built with React.
+- Wallet integration using Aptos Wallet Adapter for seamless user experience.
 
-- Configure the top-level `parserOptions` property like this:
+## Technology Stack
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- **Blockchain**: Aptos
+- **Smart Contract Language**: Move
+- **Frontend Framework**: Vite + React
+- **Wallet Integration**: Aptos Wallet Adapter
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Smart Contract Overview
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+The smart contract handles the logic of the Rock-Paper-Scissors game, including:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- Initializing player states
+- Starting a new game against a player or the computer
+- Setting moves for both players
+- Randomly generating moves for the computer
+- Finalizing game results and determining the winner
+- Retrieving game details and player states
+
+### Key Components
+
+- **Constants**: Define moves (Rock, Paper, Scissors) and game types (Player vs. Player, Player vs. Computer).
+- **Game Structure**: Stores game details like player addresses, moves, and results.
+- **PlayerState Structure**: Manages the player's game history and count.
+- **Functions**: Handle game initialization, move setting, computer move generation, and result finalization.
+
+## Installation
+
+1. **Clone the repository**:
+
+   ```bash
+   git clone https://github.com/yourusername/rock-paper-scissors-aptos.git
+   cd rock-paper-scissors-aptos
+   ```
+
+2. **Install dependencies**:
+
+   ```bash
+   npm install
+   ```
+
+3. **Compile and deploy the smart contract**:
+   - Ensure you have the Aptos CLI installed and configured.
+   - Compile and deploy the Move contract to the Aptos blockchain.
+
+4. **Run the frontend**:
+
+   ```bash
+   npm run dev
+   ```
+
+   This will start the Vite development server, and the app will be available at `http://localhost:3000`.
+
+## Usage
+
+1. **Connect your wallet**: Use the wallet adapter to connect your Aptos wallet.
+2. **Initialize your player profile**: If this is your first time playing, initialize your player profile on the blockchain.
+3. **Start a new game**: Choose to play against another player or the computer.
+4. **Make your move**: Select Rock, Paper, or Scissors.
+5. **View results**: After both players have made their moves, the results will be calculated and displayed.
+
+## How to Play
+
+1. **Player vs. Player**:
+   - Start a new game by entering your opponent's address.
+   - Both players set their moves.
+   - Finalize the game to see the result.
+
+2. **Player vs. Computer**:
+   - Start a new game against the computer.
+   - Set your move.
+   - The computer’s move will be randomly generated, and the result will be displayed.
+
+## Acknowledgement
+
+Thanks to Stackup for posting this bounty and give me opportunity to build and learn something
