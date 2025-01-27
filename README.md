@@ -2,6 +2,10 @@
 
 This project is a decentralized Rock-Paper-Scissors game built on the Aptos blockchain using the Move programming language. The game allows users to play against each other or against a computer, with all game states stored on the blockchain. The user interface is developed with Vite and React, and the project integrates with Aptos wallets using the Aptos Wallet Adapter.
 
+## Demo:
+
+https://youtu.be/UI06YbKz_t8
+
 ## Table of Contents
 
 - [Features](#features)
